@@ -1,26 +1,20 @@
-## Password Strength Checker
+Password Strength Checker
+This project is a simple password strength checker that evaluates passwords based on length, character diversity, and security best practices. It also integrates with the Have I Been Pwned API to detect whether a password has been compromised in a data breach.
 
-This is a simple JavaScript based tool that evaluates the strength of a password based on different factors. It checks for length, uppercase and lowercase letters, numbers, special characters, and common weak passwords. The tool provides a rating of Weak, Medium, or Strong based on these criteria.
+How It Works
+Strength Evaluation: Checks for uppercase and lowercase letters, numbers, special characters, and length.
+Data Breach Detection: Uses SHA-1 hashing and the Have I Been Pwned API to verify if a password has been exposed in past breaches.
+Real-Time Feedback: Displays password strength and warns users if their password has been found in a data breach.
+How to Use
+Open index.html in a browser.
+Enter a password in the input field.
+Click the "Check Strength" button to see the evaluation.
+If the password has been compromised, a warning will appear.
+Alternatively, you can run script.js in the browser console to test passwords manually.
 
-### Features
-
-- Checks if a password is commonly used
-- Evaluates length and complexity
-- Provides a clear strength rating
-
-### How to Use
-
-1. Clone the repository or download the script
-2. Open the `script.js` file and run it in a browser console or link it to an HTML file
-3. Enter a password when prompted to see its strength rating
-
-### Future Improvements
-
-- Add a visual UI for better user experience
-- Implement real-time feedback while typing
-- Expand the weak password list for better accuracy
-
-### License
-
-This project is licensed under the MIT License, meaning you are free to use, modify, and distribute it with proper attribution.
-
+Technologies Used
+JavaScript (password evaluation and breach detection)
+SHA-1 hashing (secure API querying)
+HTML & CSS (simple UI)
+License
+This project is licensed under the MIT License. You are free to use, modify, and distribute it.
