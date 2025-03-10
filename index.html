@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #strength-result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Password Strength Checker</h2>
+    <input type="password" id="password-input" placeholder="Enter your password">
+    <button onclick="evaluatePassword()">Check Strength</button>
+    <p id="strength-result"></p>
+
+    <script src="script.js"></script>
+    <script>
+        function evaluatePassword() {
+            // Get the password from the input field
+            let password = document.getElementById("password-input").value;
+            
+            // Use the function from script.js to check strength
+            let result = checkPasswordStrength(password);
+            
+            // Display the result
+            document.getElementById("strength-result").innerText = "Strength: " + result;
+        }
+    </script>
+
+</body>
+</html>
