@@ -26,6 +26,11 @@
             margin-top: 10px;
             font-weight: bold;
         }
+        .breach-warning {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -34,18 +39,25 @@
     <input type="password" id="password-input" placeholder="Enter your password">
     <button onclick="evaluatePassword()">Check Strength</button>
     <p id="strength-result"></p>
+    <p id="breach-warning" class="breach-warning"></p>
 
     <script src="script.js"></script>
     <script>
-        function evaluatePassword() {
-            // Get the password from the input field
+        async function evaluatePassword() {
             let password = document.getElementById("password-input").value;
-            
-            // Use the function from script.js to check strength
-            let result = checkPasswordStrength(password);
-            
-            // Display the result
+
+            // Check password strength
+            let result = await checkPasswordStrength(password);
+
+            // Display strength result
             document.getElementById("strength-result").innerText = "Strength: " + result;
+
+            // Check for breach warning
+            if (result.includes("Compromised")) {
+                document.getElementById("breach-warning").innerText = "Warning: This password has been found in a data breach. Use a different one.";
+            } else {
+                document.getElementById("breach-warning").innerText = "";
+            }
         }
     </script>
 
